@@ -34,11 +34,8 @@ public class JWT {
 
     }
 
-    public String getUsernameFromToken(String accesToken){
-        return Jwts.parser()
-                .verifyWith(Keys.hmacShaKeyFor(secret.getBytes()))
-                .build().parseSignedClaims(accesToken)
-                .getPayload()
-                .getSubject();
+    public String getIdFromToken(String accessToken) {
+        return Jwts.parser().verifyWith(Keys.hmacShaKeyFor(secret.getBytes())).build().parseSignedClaims(accessToken)
+                .getPayload().getSubject();
     }
 }
