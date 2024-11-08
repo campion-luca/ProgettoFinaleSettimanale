@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Table(name="events")
 @Getter
 @Setter
-@AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class Event {
     @Id
@@ -22,5 +22,15 @@ public class Event {
     private String nome;
     private LocalDate data;
     private int posti;
+    private String luogo;
+    private String descrizione;
 
+
+    public Event(LocalDate data, String descrizione, String luogo, String nome, int posti) {
+        this.data = data;
+        this.descrizione = descrizione;
+        this.luogo = luogo;
+        this.nome = nome;
+        this.posti = posti;
+    }
 }

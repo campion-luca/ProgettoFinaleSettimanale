@@ -7,7 +7,7 @@ import lombok.*;
 @Table(name="partecipations")
 @Getter
 @Setter
-@AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class Partecipation {
     @Id
@@ -22,4 +22,10 @@ public class Partecipation {
     @ManyToOne
     @JoinColumn(name="evento_id")
     private Event evento;
+
+
+    public Partecipation(Event evento, User utente) {
+        this.evento = evento;
+        this.utente = utente;
+    }
 }
