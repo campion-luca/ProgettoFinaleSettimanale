@@ -19,6 +19,7 @@ public class EventService {
     @Autowired
     UsersServices usersServices;
 
+    // error
     public Event createEvent(NewEventDTO body){
         return eventRepository.save(
                 new Event(body.titolo(),
